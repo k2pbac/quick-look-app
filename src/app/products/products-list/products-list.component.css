@@ -1,0 +1,31 @@
+.card-img-top {
+  max-width: 150px;
+  max-height: 150px;
+  padding-top: 10px;
+}
+
+.card {
+  height: 270px;
+  min-height: 270px;
+  max-height: 270px;
+}
+
+.card-title {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.1rem;
+}
+
+.heart-icon .mat-icon:hover {
+  color: rgb(182, 41, 41);
+}
+.heart-icon {
+  color: red;
+}
+
+.info-icon .mat-icon:hover {
+  color: rgb(36, 146, 173);
+}
+
+.info-icon {
+  color: rgb(49, 189, 224);
+}

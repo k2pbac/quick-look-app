@@ -1,0 +1,26 @@
+<div class="card-group p-0">
+  <div class="col-sm-4 p-1" *ngFor="let product of products">
+    <div
+      class="card mx-auto shadow-sm mt-5 text-center"
+      style="max-height: 100%"
+    >
+      <img
+        src="{{ product.imagePath }}"
+        class="card-img-top mx-auto"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.productName }}</h5>
+
+        <div class="container mt-4">
+          <a matTooltip="Add to Favourites" class="heart-icon p-2" href="#/"
+            ><mat-icon class="black-icon">favorite</mat-icon></a
+          >
+          <a matTooltip="More Information" href="#/" class="info-icon">
+            <mat-icon class="blue-icon">info</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

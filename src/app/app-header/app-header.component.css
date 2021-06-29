@@ -1,0 +1,66 @@
+.example-container {
+  height: 100%;
+  text-align: center;
+  padding-top: 30px;
+  background-color: #1d1c1c;
+}
+
+.header-sec2 {
+  margin-top: 5rem;
+}
+
+.title {
+  font-family: "Dosis", sans-serif !important;
+  font-size: 3rem;
+}
+
+input.search-input {
+  border: 1px solid #ccc;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 2px 2px 3px #666;
+  -webkit-box-shadow: 2px 2px 3px #666;
+  box-shadow: 2px 2px 3px #666;
+  font-size: 20px;
+  padding: 4px 7px;
+  outline: 0;
+  -webkit-appearance: none;
+}
+input.search-input:focus {
+  border-color: #880a54;
+}
+
+i {
+  width: 2px;
+  position: relative;
+  right: 30px;
+  font-size: 20px;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 1;
+  color: #03045fc7;
+}
+
+input.search-input {
+  height: 35px;
+  padding: 5px;
+  width: 250px;
+}
+
+.category-button {
+  width: 65%;
+  background-color: rgb(24, 77, 148);
+}
+
+.home-button {
+  background-color: lightskyblue;
+}
+
+.search-button {
+  background-color: rgb(138, 159, 180);
+}
+
+.middle-icons {
+  margin-bottom: 5rem;
+}
