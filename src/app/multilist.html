@@ -1,0 +1,19 @@
+<carousel
+  [itemsPerSlide]="itemsPerSlide"
+  [singleSlideOffset]="singleSlideOffset"
+  [noWrap]="!noWrap"
+  [interval]="false"
+  [startFromIndex]="5"
+  (slideRangeChange)="onSlideRangeChange($event)"
+>
+  <slide *ngFor="let slide of slides; let index=index">
+    <img
+      [src]="slide.image"
+      alt="image slide"
+      style="display: block; width: 100%"
+    />
+    <div class="carousel-caption">
+      <h4>Slide {{index}}</h4>
+    </div>
+  </slide>
+</carousel>

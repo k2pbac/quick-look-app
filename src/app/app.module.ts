@@ -22,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-import { ModalModule } from 'ngx-bootstrap/modal';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ProductsHomeComponent } from './products/products-home/products-home.component';
+import { DemoCarouselMultilistComponent } from './carousel-multi.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppFooterComponent,
     MainSectionComponent,
     ProductsListComponent,
+    ProductsHomeComponent,
+    DemoCarouselMultilistComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     HttpClientModule,
     MatTooltipModule,
     AppRoutingModule,
-    ModalModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

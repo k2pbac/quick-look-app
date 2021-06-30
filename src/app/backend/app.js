@@ -6,15 +6,12 @@ const ProductRoutes = require("./routes/products");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 mongoose
-  .connect(
-    "mongodb+srv://kris:bIgt9rmcYbJvmQr6@cluster0.ihfm4.mongodb.net/quick-look?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-    }
-  )
+  .connect(process.env.DB_URL || "mongodb://localhost:27017/quick-look", {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
   .then(() => {
     console.log("Connected to Database!");
   })
