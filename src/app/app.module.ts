@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
+import { ProductsCategoryComponent } from './products/products-category/products-category.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,10 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { ProductsHomeComponent } from './products/products-home/products-home.component';
-import { DemoCarouselMultilistComponent } from './carousel-multi.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,8 +30,7 @@ import { DemoCarouselMultilistComponent } from './carousel-multi.component';
     AppFooterComponent,
     MainSectionComponent,
     ProductsListComponent,
-    ProductsHomeComponent,
-    DemoCarouselMultilistComponent,
+    ProductsCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +48,6 @@ import { DemoCarouselMultilistComponent } from './carousel-multi.component';
     HttpClientModule,
     MatTooltipModule,
     AppRoutingModule,
-    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
