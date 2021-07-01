@@ -112,6 +112,7 @@
 module.exports = [
   {
     productName: "Dempster’s® 100% Whole Wheat Bread",
+    category: "Bread",
     description: `Dempster's® 100% Whole Wheat Bread is delicious any time of the day. It’s made with our simplest ingredients and no artificial flavours or colours for wholesome taste the whole family will love.
 
     Dempster’s® is proud to continue 100 years of tradition. We bake fresh daily from coast to coast the Canadian way, with dedicated bakers choosing Canadian wheat flour and quality ingredients. Our bakers are proud to bring you the soft and nourishing bread you love, with our simplest recipe yet!
@@ -124,6 +125,7 @@ module.exports = [
   },
   {
     productName: "Dempster’s® White Bread",
+    category: "Bread",
     description: `A classic choice, Dempster's® White Bread is delicious any time of the day. It’s made with our simplest ingredients and no artificial flavours or colours for great taste the whole family will love.
 
     Dempster’s® is proud to continue 100 years of tradition. We bake fresh daily from coast to coast the Canadian way, with dedicated bakers choosing Canadian wheat flour and quality ingredients. Our bakers are proud to bring you the soft and nourishing bread you love, with our simplest recipe yet!
@@ -136,6 +138,7 @@ module.exports = [
   },
   {
     productName: "Villaggio® Classico Italian Style Thick Slice White Bread",
+    category: "Bread",
     description: `Villaggio® Classico Italian Style Thick Slice White Bread is a soft, hearty and delicious bread with no artificial colours or flavours. An irresistible choice, this classic soft bread brings the warmth and simple pleasure of the village bakery to your table.
 
     At the heart of every European village is a bakery where the inviting and welcoming aroma of fresh baked bread draws everyone in. Inspired by traditional recipes. our Villaggio® Italian-style breads and buns bring the warmth and simple pleasures reminiscent of the village bakery to your home. Soft, hearty and delicious —Villaggio® is an experience to share with friends and family, or to enjoy on your own.
@@ -150,6 +153,7 @@ module.exports = [
   },
   {
     productName: "Dempster’s® 100% Whole Grains 12 Grain Bread",
+    category: "Bread",
     description: `Dempster's® Whole Grains 12 Grain Bread is full of flavour. The soft bread is made with our simplest ingredients and no artificial flavours or colours for tasty meals you can feel good about serving.
 
     Dempster’s® is proud to continue 100 years of tradition. We bake fresh daily from coast to coast the Canadian way, with dedicated bakers choosing Canadian wheat flour and quality ingredients. Made with no artificial flavours or colours and our simplest ingredients, you can proudly bring the goodness of whole grains to your table.
@@ -163,12 +167,14 @@ module.exports = [
   {
     productName:
       "Dempster’s® 100% Whole Grains Ancient Grains with Quinoa Bread",
+    category: "Bread",
     description: `Dempster’s® 100% Whole Grains Ancient Grains with Quinoa Bread`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/278/626/6000200278626.jpg",
   },
   {
     productName: "Dempster’s® 100% Whole Grains Multigrain Bread",
+    category: "Bread",
     description: `Dempster's® 100% Whole Grains Multigrain Bread is soft and wholesome. It is made with our simplest ingredients and no artificial flavours or colours for tasty meals you can feel good about.
 
     Dempster’s® is proud to continue 100 years of tradition. We bake fresh daily from coast to coast the Canadian way, with dedicated bakers choosing Canadian wheat flour and quality ingredients. Made with no artificial flavours or colours and our simplest ingredients, you can proudly bring the goodness of whole grains to your table.

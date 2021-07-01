@@ -1,15 +1,12 @@
 const mongoose = require("mongoose");
-const Product = require("../models/product");
 const seeds = require("./seeds");
+const Product = require("../../models/product");
 
-mongoose.connect(
-  "mongodb+srv://kris:bIgt9rmcYbJvmQr6@cluster0.ihfm4.mongodb.net/quick-look?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  }
-);
+mongoose.connect(process.env.DB_URL || "mongodb://localhost:27017/quick-look", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -23,6 +20,7 @@ const seedDB = async () => {
   for (const el of seeds) {
     const product = new Product({
       productName: el.productName,
+      category: el.category,
       description: el.description,
       imagePath: el.imagePath,
     });

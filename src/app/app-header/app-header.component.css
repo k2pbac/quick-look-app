@@ -1,8 +1,13 @@
 .example-container {
   height: 100%;
+  width: 25%;
   text-align: center;
+  position: fixed;
   padding-top: 30px;
   background-color: #1d1c1c;
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
 }
 
 .header-sec2 {

@@ -1,42 +1,40 @@
-<div class="example-container h-100">
-  <div class="sticky-top">
-    <div class="row">
-      <div class="col" style="max-height: 200px">
-        <img class="img-fluid" src="assets/images/QuickLook6.png" alt="" />
-      </div>
+<div class="example-container">
+  <div class="row">
+    <div class="col" style="max-height: 200px">
+      <img class="img-fluid" src="assets/images/QuickLook6.png" alt="" />
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col">
-        <div class="mx-auto middle-icons">
-          <button
-            routerLink="/"
-            matTooltip="Home"
-            class="home-button"
-            style="margin-right: 10px"
-            mat-mini-fab
-            aria-label="Home icon"
-          >
-            <mat-icon>home</mat-icon>
-          </button>
-          <button
-            matTooltip="Search"
-            class="search-button"
-            mat-mini-fab
-            aria-label="Search icon"
-          >
-            <mat-icon>search</mat-icon>
-          </button>
-        </div>
-
+  <div class="row">
+    <div class="col">
+      <div class="mx-auto middle-icons">
         <button
-          class="btn category-button mb-3 btn-primary"
-          routerLink="/category/bread"
+          routerLink="/"
+          matTooltip="Home"
+          class="home-button"
+          style="margin-right: 10px"
+          mat-mini-fab
+          aria-label="Home icon"
         >
-          Categories
+          <mat-icon>home</mat-icon>
         </button>
-        <button class="btn category-button btn-primary">Favorites</button>
+        <button
+          matTooltip="Search"
+          class="search-button"
+          mat-mini-fab
+          aria-label="Search icon"
+        >
+          <mat-icon>search</mat-icon>
+        </button>
       </div>
+
+      <button
+        class="btn category-button mb-3 btn-primary"
+        routerLink="/categories"
+      >
+        Categories
+      </button>
+      <button class="btn category-button btn-primary">Favorites</button>
     </div>
   </div>
 </div>

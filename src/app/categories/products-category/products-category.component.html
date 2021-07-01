@@ -1,0 +1,16 @@
+<div class="row card-group">
+  <div class="col-sm-4 p-1" *ngFor="let category of categories">
+    <a [routerLink]="['/categories', category.categoryName]">
+      <div class="card mx-auto shadow-sm text-center">
+        <img
+          src="{{ category.imagePath }}"
+          class="card-img-top mx-auto"
+          alt="..."
+        />
+        <div class="card-body">
+          <h1 class="card-title">{{ category.categoryName }}</h1>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

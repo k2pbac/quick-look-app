@@ -1,0 +1,19 @@
+.card {
+  height: 200px;
+}
+
+.card-img-top {
+  height: 75%;
+  object-fit: contain;
+}
+
+a:link {
+  text-decoration: none;
+}
+a {
+  color: black;
+}
+
+.card:hover {
+  opacity: 0.6;
+}

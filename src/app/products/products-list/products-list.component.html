@@ -1,26 +1,84 @@
-<div class="card-group p-0">
-  <div class="col-sm-4 p-1" *ngFor="let product of products">
-    <div
-      class="card mx-auto shadow-sm mt-5 text-center"
-      style="max-height: 100%"
+<div class="container-fluid mt-3" style="width: 80%">
+  <div
+    class="row d-flex justify-content-center"
+    style="height: 80px; background-color: #1d1c1c"
+  >
+    <h1
+      class="p-4 text-white"
+      style="font-size: 2rem; font-family: 'Roboto Slab', serif"
     >
-      <img
-        src="{{ product.imagePath }}"
-        class="card-img-top mx-auto"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{ product.productName }}</h5>
+      {{ categoryName }}
+    </h1>
+  </div>
+  <div class="row d-flex justify-content-end">
+    <div class="btn-group" dropdown>
+      <button
+        id="button-basic"
+        dropdownToggle
+        type="button"
+        class="btn dropdown-toggle"
+        style="background-color: rgb(226, 222, 222)"
+        aria-controls="dropdown-basic"
+      >
+        Sort Products <span class="caret"></span>
+      </button>
+      <ul
+        id="dropdown-basic"
+        *dropdownMenu
+        class="dropdown-menu"
+        role="menu"
+        aria-labelledby="button-basic"
+      >
+        <li role="menuitem"><a class="dropdown-item" href="#">Ascending</a></li>
+        <li role="menuitem">
+          <a class="dropdown-item" href="#">Descending</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" href="#">Favorites</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card-group p-0" *ngIf="products.length > 0">
+      <div class="col-sm-4 p-1" *ngFor="let product of products">
+        <div
+          class="card mx-auto shadow-sm mt-5 text-center"
+          style="max-height: 100%"
+        >
+          <img
+            src="{{ product.imagePath }}"
+            class="card-img-top mx-auto"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.productName }}</h5>
 
-        <div class="container mt-4">
-          <a matTooltip="Add to Favourites" class="heart-icon p-2" href="#/"
-            ><mat-icon class="black-icon">favorite</mat-icon></a
-          >
-          <a matTooltip="More Information" href="#/" class="info-icon">
-            <mat-icon class="blue-icon">info</mat-icon>
-          </a>
+            <div class="container">
+              <a matTooltip="Add to Favourites" class="heart-icon p-2" href="#/"
+                ><mat-icon class="black-icon">favorite</mat-icon></a
+              >
+              <a matTooltip="More Information" href="#/" class="info-icon">
+                <mat-icon class="blue-icon">info</mat-icon>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <div
+    *ngIf="products.length > 0"
+    class="row mt-2 d-flex justify-content-end align-items-end"
+  >
+    <pagination
+      [totalItems]="totalProducts"
+      [itemsPerPage]="itemsPerPage"
+      [(ngModel)]="currentPage"
+      (pageChanged)="pageChanged($event)"
+    ></pagination>
+  </div>
+</div>
+<div class="container-fluid" style="width: 80%">
+  <h1 *ngIf="products.length <= 0">No products found</h1>
 </div>

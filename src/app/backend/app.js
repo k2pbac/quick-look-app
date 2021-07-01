@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const ProductRoutes = require("./routes/products");
+const CategoryRoutes = require("./routes/categories");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -33,6 +34,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/", ProductRoutes);
+app.use("/", CategoryRoutes);
 
 app.get("*", (req, res) => {
   res.send("hello");

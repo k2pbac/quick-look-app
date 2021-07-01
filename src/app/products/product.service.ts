@@ -9,48 +9,54 @@ import { Product } from './product.model';
 @Injectable({ providedIn: 'root' })
 export class ProductsService {
   private products: Product[] = [];
-  private productsUpdated = new Subject<Product[]>();
-
+  private productsUpdated = new Subject<{
+    products: Product[];
+    count: number;
+  }>();
   constructor(private http: HttpClient, private router: Router) {}
 
-  getProducts() {
+  getProducts(name: string, currentPage: number, itemsPerPage: number) {
     this.http
-      .get<{ message: string; products: any }>('http://localhost:3000/')
+      .get<{ message: string; products: any; count: number }>(
+        'http://localhost:3000/categories/' +
+          name +
+          '?pagesize=' +
+          itemsPerPage +
+          '&currentpage=' +
+          currentPage
+      )
       .pipe(
         map((productData) => {
-          return productData.products.map(
-            (product: {
-              productName: any;
-              description: any;
-              _id: any;
-              imagePath: any;
-            }) => {
-              return {
-                productName: product.productName,
-                description: product.description,
-                id: product._id,
-                imagePath: product.imagePath,
-              };
-            }
-          );
+          return {
+            products: productData.products.map(
+              (product: {
+                productName: any;
+                description: any;
+                _id: any;
+                imagePath: any;
+              }) => {
+                return {
+                  productName: product.productName,
+                  description: product.description,
+                  id: product._id,
+                  imagePath: product.imagePath,
+                };
+              }
+            ),
+            count: productData.count,
+          };
         })
       )
-      .subscribe((transformedProducts) => {
-        this.products = transformedProducts;
-        this.productsUpdated.next([...this.products]);
+      .subscribe((transformedProductData) => {
+        this.products = transformedProductData.products;
+        this.productsUpdated.next({
+          products: [...this.products],
+          count: transformedProductData.count,
+        });
       });
   }
 
-  getPostUpdateListener() {
+  getProductUpdateListener() {
     return this.productsUpdated.asObservable();
-  }
-
-  getProduct(id: string) {
-    return this.http.get<{
-      _id: string;
-      productName: string;
-      description: string;
-      imagePath: string;
-    }>('http://localhost:3000/' + id);
   }
 }
