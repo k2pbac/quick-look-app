@@ -1,4 +1,6 @@
-<div class="container-fluid mt-3" style="width: 80%">
+<mat-spinner class="m-auto loader" *ngIf="isLoading"></mat-spinner>
+
+<div class="container-fluid mt-3 h-100" *ngIf="!isLoading" style="width: 80%">
   <div
     class="row d-flex justify-content-center"
     style="height: 80px; background-color: #1d1c1c"
@@ -11,7 +13,7 @@
     </h1>
   </div>
   <div class="row d-flex justify-content-end">
-    <div class="btn-group" dropdown>
+    <div *ngIf="products.length > 0" class="btn-group" dropdown>
       <button
         id="button-basic"
         dropdownToggle
@@ -29,12 +31,21 @@
         role="menu"
         aria-labelledby="button-basic"
       >
-        <li role="menuitem"><a class="dropdown-item" href="#">Ascending</a></li>
         <li role="menuitem">
-          <a class="dropdown-item" href="#">Descending</a>
+          <a
+            class="dropdown-item"
+            href="javascript: void(0);"
+            (click)="sortAscending()"
+            >Ascending</a
+          >
         </li>
         <li role="menuitem">
-          <a class="dropdown-item" href="#">Favorites</a>
+          <a
+            class="dropdown-item"
+            href="javascript: void(0);"
+            (click)="sortDescending()"
+            >Descending</a
+          >
         </li>
       </ul>
     </div>
@@ -43,27 +54,65 @@
     <div class="card-group p-0" *ngIf="products.length > 0">
       <div class="col-sm-4 p-1" *ngFor="let product of products">
         <div
-          class="card mx-auto shadow-sm mt-5 text-center"
-          style="max-height: 100%"
+          bsModal
+          #lgModal="bs-modal"
+          class="modal fade"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="dialog-sizes-name1"
         >
-          <img
-            src="{{ product.imagePath }}"
-            class="card-img-top mx-auto"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{ product.productName }}</h5>
-
-            <div class="container">
-              <a matTooltip="Add to Favourites" class="heart-icon p-2" href="#/"
-                ><mat-icon class="black-icon">favorite</mat-icon></a
-              >
-              <a matTooltip="More Information" href="#/" class="info-icon">
-                <mat-icon class="blue-icon">info</mat-icon>
-              </a>
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 id="dialog-sizes-name1" class="modal-title pull-left">
+                  {{ product.productName }}
+                </h4>
+                <button
+                  type="button"
+                  class="close pull-right"
+                  (click)="lgModal.hide()"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="{{ product.imagePath }}"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <h2>Description</h2>
+                <p>{{ product.description }}</p>
+              </div>
             </div>
           </div>
         </div>
+
+        <a
+          href="javascript: void(0);"
+          (click)="lgModal.show()"
+          class="text-dark"
+        >
+          <div
+            class="card mx-auto mt-5 text-center hvr-glow"
+            style="max-height: 100%"
+          >
+            <img
+              src="{{ product.imagePath }}"
+              class="card-img-top mx-auto"
+              alt="..."
+            />
+            <div class="card-bottom h-100">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.productName }}</h5>
+              </div>
+            </div>
+            <button class="testBtn btn-success btn" style="visibility: hidden">
+              test
+            </button>
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -79,6 +128,10 @@
     ></pagination>
   </div>
 </div>
-<div class="container-fluid" style="width: 80%">
-  <h1 *ngIf="products.length <= 0">No products found</h1>
+<div
+  class="container-fluid"
+  *ngIf="!isLoading && products.length <= 0"
+  style="width: 80%"
+>
+  <h1>No products found</h1>
 </div>

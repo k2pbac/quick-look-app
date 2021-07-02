@@ -1,16 +1,31 @@
-<div class="row card-group">
-  <div class="col-sm-4 p-1" *ngFor="let category of categories">
-    <a [routerLink]="['/categories', category.categoryName]">
-      <div class="card mx-auto shadow-sm text-center">
-        <img
-          src="{{ category.imagePath }}"
-          class="card-img-top mx-auto"
-          alt="..."
-        />
-        <div class="card-body">
-          <h1 class="card-title">{{ category.categoryName }}</h1>
+<mat-spinner class="m-auto loader" *ngIf="isLoading"></mat-spinner>
+
+<div class="container-fluid mt-3 h-100" style="width: 80%" *ngIf="!isLoading">
+  <div
+    class="row d-flex justify-content-center"
+    style="height: 80px; background-color: #1d1c1c"
+  >
+    <h1
+      class="p-4 text-white"
+      style="font-size: 2rem; font-family: 'Roboto Slab', serif"
+    >
+      Categories
+    </h1>
+  </div>
+  <div class="row card-group">
+    <div class="col-sm-4 p-1" *ngFor="let category of categories">
+      <a [routerLink]="['/categories', category.categoryName]">
+        <div class="card mx-auto shadow-sm text-center">
+          <img
+            src="{{ category.imagePath }}"
+            class="card-img-top mx-auto"
+            alt="..."
+          />
+          <div class="card-body">
+            <h1 class="card-title">{{ category.categoryName }}</h1>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 </div>

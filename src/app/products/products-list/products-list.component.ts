@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, TemplateRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
-
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Product } from '../product.model';
 import { ProductsService } from '../product.service';
 
@@ -17,13 +17,15 @@ export class ProductsListComponent implements OnInit, OnDestroy {
   isLoading = false;
   categoryName: string;
   totalProducts = 0;
-  itemsPerPage = 3;
+  itemsPerPage = 6;
   currentPage = 1;
   page: number;
+  modalRef: BsModalRef;
 
   constructor(
     public productsService: ProductsService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    private modalService: BsModalService
   ) {}
 
   ngOnInit() {
@@ -60,5 +62,17 @@ export class ProductsListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.productSub.unsubscribe();
+  }
+
+  sortAscending() {
+    this.products.sort((a, b) => a.productName.localeCompare(b.productName));
+  }
+
+  sortDescending() {
+    this.products.reverse();
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 }

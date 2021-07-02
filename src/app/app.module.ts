@@ -9,7 +9,6 @@ import { ProductsCategoryComponent } from './categories/products-category/produc
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
@@ -26,6 +25,12 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ProductModalComponent } from './products/product-modal/product-modal.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsModalService } from 'ngx-bootstrap/modal';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,13 +39,13 @@ import { FormsModule } from '@angular/forms';
     MainSectionComponent,
     ProductsListComponent,
     ProductsCategoryComponent,
+    ProductModalComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatSliderModule,
     MatSidenavModule,
     MatGridListModule,
     MatInputModule,
@@ -55,8 +60,11 @@ import { FormsModule } from '@angular/forms';
     PaginationModule.forRoot(),
     MatPaginatorModule,
     FormsModule,
+    DragDropModule,
+    MatProgressSpinnerModule,
+    ModalModule,
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

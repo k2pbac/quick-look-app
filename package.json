@@ -24,6 +24,7 @@
     "bootstrap": "4.6",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "hover.css": "^2.3.2",
     "mongo": "^0.1.0",
     "mongoose": "^5.12.15",
     "ngx-bootstrap": "^6.2.0",
