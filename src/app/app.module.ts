@@ -30,6 +30,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProductModalComponent } from './products/product-modal/product-modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { HomeComponent } from './home/home.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { CarouselMultilist } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,8 @@ import { BsModalService } from 'ngx-bootstrap/modal';
     ProductsListComponent,
     ProductsCategoryComponent,
     ProductModalComponent,
+    HomeComponent,
+    CarouselMultilist,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +68,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
     DragDropModule,
     MatProgressSpinnerModule,
     ModalModule,
+    CarouselModule,
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent],

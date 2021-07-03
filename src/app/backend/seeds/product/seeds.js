@@ -11,6 +11,7 @@ module.exports = [
     • Made with Canadian Wheat Flour`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/023/787/6000197023787.jpg",
+    likes: 0,
   },
   {
     productName: "Dempster’s® White Bread",
@@ -24,6 +25,7 @@ module.exports = [
     • Made with Canadian Wheat Flour`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/023/858/6000197023858.jpg",
+    likes: 0,
   },
   {
     productName: "Villaggio® Classico Italian Style Thick Slice White Bread",
@@ -39,6 +41,7 @@ module.exports = [
     • Great for breakfast, lunch or dinner`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/100/350/999999-6872100350.jpg",
+    likes: 0,
   },
   {
     productName: "Dempster’s® 100% Whole Grains 12 Grain Bread",
@@ -52,6 +55,7 @@ module.exports = [
     • Made with Canadian Wheat Flour`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/172/234/999999-6872172234.jpg",
+    likes: 0,
   },
   {
     productName:
@@ -60,6 +64,7 @@ module.exports = [
     description: `Dempster’s® 100% Whole Grains Ancient Grains with Quinoa Bread`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/278/626/6000200278626.jpg",
+    likes: 0,
   },
   {
     productName: "Dempster’s® 100% Whole Grains Multigrain Bread",
@@ -73,6 +78,7 @@ module.exports = [
     • Made with Canadian Wheat Flour`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/243/753/6000200243753.jpg",
+    likes: 0,
   },
   {
     productName: "Great Value Enriched White Bread",
@@ -80,6 +86,7 @@ module.exports = [
     description: `Your family will enjoy the classic great taste of Great Value Enriched White Bread. Always be prepared to make a quick meal on the go when you keep a bag or two of Great Value Enriched White Bread on hand in your pantry or freezer.`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/002/379/628915002379.jpg",
+    likes: 0,
   },
   {
     productName: "Great Value 100% Whole Wheat Bread",
@@ -87,6 +94,7 @@ module.exports = [
     description: `Your family will savour the delicious flavour of Great Value 100% Whole Wheat Bread. This 100% whole wheat, low fat bread with no cholesterol is perfect for your favourite sandwiches or your morning toast, making it a winner every day of the week.`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/002/386/628915002386.jpg",
+    likes: 0,
   },
   {
     productName: "WW™ White Bread",
@@ -100,6 +108,7 @@ module.exports = [
     • 1 SmartPoints™ per 1 Slice`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/940/643/6000196940643.jpg",
+    likes: 0,
   },
   {
     productName: "Villaggio® Sesame Italian Style Thick Slice White Bread",
@@ -115,6 +124,7 @@ module.exports = [
     • Perfect for sandwiches and tastes great toasted`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/100/351/999999-6872100351.jpg",
+    likes: 0,
   },
   {
     productName: "Dempster’s® 100% Whole Grains Smooth Multigrain Bread",
@@ -128,6 +138,7 @@ module.exports = [
     • Made with Canadian Wheat Flour`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/352/700/6000200352700.jpg",
+    likes: 0,
   },
   {
     productName: "Dempster’s® 100% Whole Grains Double Flax Bread",
@@ -141,6 +152,7 @@ module.exports = [
     • Made with Canadian Wheat Flour`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/192/291/999999-6872192291.jpg",
+    likes: 0,
   },
   {
     productName: "Sun-Maid® Cinnamon Swirl Raisin Bread",
@@ -157,6 +169,7 @@ module.exports = [
     • No trans fat`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/705/110/6000196705110.jpg",
+    likes: 0,
   },
   {
     productName: "Dimpflmeier Prebiotic Multigrain Breat",
@@ -167,6 +180,7 @@ module.exports = [
     • Made with natural artisan spring water"`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/439/018/6000200439018.jpg",
+    likes: 0,
   },
   {
     productName: "Dimpflmeier Bavarian Multigrain Bread",
@@ -177,6 +191,7 @@ module.exports = [
     • Made with natural artisan spring water`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/439/040/6000200439040.jpg",
+    likes: 0,
   },
   {
     productName: "Dempster’s® White Thin Sandwich Bread",
@@ -190,6 +205,7 @@ module.exports = [
     • Canadian wheat flour`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/518/564/6000200518564.jpg",
+    likes: 0,
   },
   {
     productName: "Dimpflmeier Munich Style Light Rye Bread",
@@ -201,5 +217,6 @@ module.exports = [
     • Made with natural artisan spring water`,
     imagePath:
       "https://i5.walmartimages.ca/images/Enlarge/439/055/6000200439055.jpg",
+    likes: 0,
   },
 ];

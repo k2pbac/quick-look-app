@@ -1,5 +1,14 @@
 const Product = require("../models/product");
 
+module.exports.favoriteProducts = async (req, res) => {
+  const favorites = await Product.find({ likes: 0 }).limit(6);
+
+  res.status(200).json({
+    products: favorites,
+    message: "Products Retrieved",
+  });
+};
+
 module.exports.displayProducts = async (req, res) => {
   const pageSize = +req.query.pagesize;
   const currentPage = +req.query.currentpage;
@@ -11,14 +20,14 @@ module.exports.displayProducts = async (req, res) => {
       .limit(pageSize);
     res.status(200).json({
       products: products,
-      message: "Posts Retrieved",
+      message: "Products Retrieved",
       count: count,
     });
   } else {
     const products = await Product.find({ category: name });
     res.status(200).json({
       products: products,
-      message: "Posts Retrieved",
+      message: "Products Retrieved",
       count: count,
     });
   }

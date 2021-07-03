@@ -15,6 +15,41 @@ export class ProductsService {
   }>();
   constructor(private http: HttpClient, private router: Router) {}
 
+  getFavorites() {
+    this.http
+      .get<{ message: string; products: any }>('http://localhost:3000/')
+      .pipe(
+        map((productData) => {
+          return {
+            products: productData.products.map(
+              (product: {
+                productName: any;
+                description: any;
+                _id: any;
+                imagePath: any;
+                likes: number;
+              }) => {
+                return {
+                  productName: product.productName,
+                  description: product.description,
+                  id: product._id,
+                  imagePath: product.imagePath,
+                  likes: product.likes,
+                };
+              }
+            ),
+          };
+        })
+      )
+      .subscribe((transformedProductData) => {
+        this.products = transformedProductData.products;
+        this.productsUpdated.next({
+          products: [...this.products],
+          count: 0,
+        });
+      });
+  }
+
   getProducts(name: string, currentPage: number, itemsPerPage: number) {
     this.http
       .get<{ message: string; products: any; count: number }>(
@@ -34,12 +69,14 @@ export class ProductsService {
                 description: any;
                 _id: any;
                 imagePath: any;
+                likes: number;
               }) => {
                 return {
                   productName: product.productName,
                   description: product.description,
                   id: product._id,
                   imagePath: product.imagePath,
+                  likes: product.likes,
                 };
               }
             ),

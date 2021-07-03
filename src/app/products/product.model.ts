@@ -3,4 +3,5 @@ export interface Product {
   productName: string;
   description: string;
   imagePath: string;
+  likes: number;
 }

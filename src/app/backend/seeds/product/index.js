@@ -23,6 +23,7 @@ const seedDB = async () => {
       category: el.category,
       description: el.description,
       imagePath: el.imagePath,
+      likes: el.likes,
     });
     await product.save();
   }
